@@ -1,3 +1,11 @@
+# --- make repo root importable on Streamlit Cloud ---
+import sys
+from pathlib import Path
+REPO_ROOT = Path(__file__).resolve().parents[1]  # repo root (works for app/ & app/pages/)
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+# ----------------------------------------------------
+
 import streamlit as st
 from datetime import datetime
 
@@ -111,4 +119,4 @@ with st.expander("🧪 Sanity Check Cepat"):
 - Terakhir, tes **PDF scan** dengan **Paksa OCR** aktif.  
 """)
 
-st.caption("© 2025 • Resume Analyst — built for speed & clarity. Siap dipamerin ke klien Upwork. 💼")
+st.caption("© 2025 • Resume Analyst — built for speed & clarity")

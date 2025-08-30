@@ -1,3 +1,11 @@
+# --- make repo root importable on Streamlit Cloud ---
+import sys
+from pathlib import Path
+REPO_ROOT = Path(__file__).resolve().parents[1]  # repo root (works for app/ & app/pages/)
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+# ----------------------------------------------------
+
 import pandas as pd
 import streamlit as st
 from src.infer import predict_topk
@@ -27,8 +35,6 @@ if err:
     st.warning(err)
 
 text = text or sample
-# ... kode atas tetap
-
 analyze = st.button("Analyze", disabled=not text)
 
 if analyze:
@@ -40,19 +46,21 @@ if analyze:
         st.subheader(f"Predicted: {out['pred']}  (ambiguous: {out['ambiguous']})")
         st.caption(ambi_msg)
 
-        import pandas as pd
-        df = pd.DataFrame(out["topk"])  # label, conf, pct
+        df = pd.DataFrame(out["topk"])  # kolom: label, conf (0-1), mungkin ada pct
+        if "pct" not in df.columns:  # fallback kalau tidak ada
+            df["pct"] = (df["conf"] * 100).round(2)
+
         c1, c2 = st.columns(2)
         with c1:
             st.markdown("**Top-3 Probabilities (%)**")
             st.bar_chart(df.set_index("label")["pct"])
         with c2:
             st.markdown("**Raw Top-3**")
-            st.dataframe(df[["label","pct","conf"]])
+            st.dataframe(df[["label", "pct", "conf"]])
 
-        # === Skill Recommendations (PASTIKAN DI DALAM if analyze:) ===
+        # === Skill Recommendations ===
         st.markdown("### 🔧 Skill Recommendations")
-        rec = recommend_skills(text, out["pred"], out["topk"], n=6)   # pass text, label, topk
+        rec = recommend_skills(text, out["pred"], out["topk"], n=6)
         need = rec.get("need_to_add", [])
         alts = rec.get("alts_preview", [])
 
@@ -76,12 +84,11 @@ if analyze:
                 "ambiguous": out["ambiguous"],
                 "top1_label": df.iloc[0]["label"],
                 "top1_pct": df.iloc[0]["pct"],
-                "chars": len(text)
+                "chars": len(text),
             }
             path = "output/pred_log.csv"
             if not os.path.exists(path):
                 pd.DataFrame([row]).to_csv(path, index=False)
             else:
-                pd.concat([pd.read_csv(path), pd.DataFrame([row])],
-                          ignore_index=True).to_csv(path, index=False)
+                pd.concat([pd.read_csv(path), pd.DataFrame([row])], ignore_index=True).to_csv(path, index=False)
             st.success(f"Hasil tersimpan ke {path}")
