@@ -1,0 +1,92 @@
+{
+  "ENGINEERING": [
+    "Python", "Git", "Linux", "Data Structures", "Docker",
+    "scikit-learn", "TensorFlow", "PyTorch", "System Design",
+    "REST API", "CI/CD", "Kubernetes", "C++", "Embedded Systems"
+  ],
+  "ACCOUNTANT": [
+    "Tax Law", "Excel Advanced", "Financial Reporting",
+    "Auditing", "SQL", "IFRS", "Budgeting", "ERP (SAP/Oracle)",
+    "Cost Accounting", "Payroll Management", "QuickBooks"
+  ],
+  "FINANCE": [
+    "Valuation", "Financial Modeling", "Excel", "Power BI",
+    "SQL", "Investment Analysis", "Derivatives",
+    "Risk Management", "Equity Research", "Corporate Finance"
+  ],
+  "ARTS": [
+    "Portfolio", "Illustration", "Adobe Photoshop", "Creativity",
+    "Storytelling", "3D Modeling (Blender)", "Animation Basics",
+    "Digital Painting", "Typography", "Art History Knowledge"
+  ],
+  "BANKING": [
+    "Risk Analysis", "Credit Scoring", "Compliance", "SQL",
+    "AML/KYC Regulations", "Financial Regulations",
+    "Fraud Detection", "Wealth Management", "Corporate Lending"
+  ],
+  "DESIGNER": [
+    "Figma", "UI/UX", "Wireframing", "Prototyping",
+    "Adobe XD", "Responsive Design", "Design Systems",
+    "Interaction Design", "Motion Design", "Graphic Branding"
+  ],
+  "DATA SCIENCE": [
+    "Python", "R", "Pandas", "Machine Learning", "Deep Learning",
+    "SQL", "Feature Engineering", "Data Visualization",
+    "NLP", "Computer Vision", "Big Data (Hadoop/Spark)"
+  ],
+  "MARKETING": [
+    "Digital Marketing", "SEO/SEM", "Google Analytics",
+    "Content Strategy", "Copywriting", "Social Media Ads",
+    "Email Marketing", "Brand Management", "A/B Testing"
+  ],
+  "CONSULTANT": [
+    "Business Analysis", "Presentation Skills", "Stakeholder Management",
+    "Problem Solving", "Excel Modeling", "Negotiation",
+    "Change Management", "Project Management", "Market Research"
+  ],
+  "IT SUPPORT": [
+    "Networking Basics", "Windows/Linux Admin", "Troubleshooting",
+    "Helpdesk Tools", "Active Directory", "Customer Communication",
+    "ITIL Framework", "Cybersecurity Basics", "Cloud Support"
+  ],
+  "PROJECT MANAGER": [
+    "Agile", "Scrum", "Kanban", "Jira", "Asana",
+    "Team Leadership", "Budgeting", "Risk Management",
+    "Communication", "Stakeholder Engagement"
+  ],
+  "HUMAN RESOURCES": [
+    "Recruitment", "Talent Acquisition", "Employee Relations",
+    "HR Policies", "Compensation & Benefits", "Onboarding",
+    "Conflict Resolution", "Training & Development"
+  ],
+  "EDUCATION": [
+    "Curriculum Development", "Teaching", "Public Speaking",
+    "Classroom Management", "Instructional Design",
+    "Online Learning Tools", "Assessment Methods"
+  ],
+  "HEALTHCARE": [
+    "Medical Terminology", "Patient Care", "Clinical Documentation",
+    "EHR Systems", "Pharmacology", "Diagnostics",
+    "Healthcare Compliance", "Telemedicine Tools"
+  ],
+  "LEGAL": [
+    "Contract Law", "Corporate Law", "Legal Research",
+    "Litigation", "Intellectual Property", "Compliance",
+    "Negotiation", "Document Drafting"
+  ],
+  "SALES": [
+    "Lead Generation", "CRM Tools", "Cold Calling",
+    "Negotiation", "Closing Deals", "Upselling",
+    "Customer Relationship Management", "Sales Forecasting"
+  ],
+  "SOFTWARE DEVELOPMENT": [
+    "Java", "C#", "JavaScript", "React", "Node.js",
+    "TypeScript", "SQL/NoSQL", "API Development",
+    "Testing (Unit/Integration)", "Agile Practices"
+  ],
+  "CYBERSECURITY": [
+    "Network Security", "Penetration Testing", "Firewalls",
+    "Incident Response", "SIEM Tools", "Risk Assessment",
+    "Cryptography", "Vulnerability Management"
+  ]
+}
